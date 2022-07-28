@@ -1,0 +1,13 @@
+<div class="posição">
+    <mat-card class="card" *ngFor="let pokemon of pokemons" (click)="detailsPokemon()">
+        <mat-card-title-group>
+            <div class="card_info">
+                <h2 class="card_infoH2">{{pokemon.name}}</h2>
+                <span class="card_infoSpan" > Nº{{pokemon.id}} </span>
+            </div>
+            <div>
+                <img class="card_img" src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+            </div>
+        </mat-card-title-group>
+    </mat-card>
+</div>
