@@ -16,7 +16,7 @@ export class ListPokemonComponent implements OnInit {
     { name: 'Ivysaur', url:'Pk', id:'2'},
     { name: 'Venusaur', url:'Pk', id:'3'},
     { name: 'Charmander', url:'Pk', id:'4'},
-    { name: 'Charmelo', url:'Pk', id:'5'},
+    { name: 'Charmeleon', url:'Pk', id:'5'},
     { name: 'Charizard', url:'Pk', id:'6'},
     { name: 'Squirtle', url:'Pk', id:'7'},
     { name: 'Wartortle', url:'Pk', id:'8'},
