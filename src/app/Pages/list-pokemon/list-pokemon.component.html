@@ -1,12 +1,12 @@
 <div class="posição">
-    <mat-card class="card" *ngFor="let pokemon of pokemons" (click)="detailsPokemon()">
+    <mat-card class="card" *ngFor="let pokemon of pokemons" (click)="detailsPokemons(pokemon.id)">
         <mat-card-title-group>
             <div class="card_info">
                 <h2 class="card_infoH2">{{pokemon.name}}</h2>
                 <span class="card_infoSpan" > Nº{{pokemon.id}} </span>
             </div>
             <div>
-                <img class="card_img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/{{pokemon.id}}.svg">
+                <img class="card_img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png">
             </div>
         </mat-card-title-group>
     </mat-card>

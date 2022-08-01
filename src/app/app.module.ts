@@ -10,6 +10,7 @@ import { DetailsPokemonComponent } from './Pages/details-pokemon/details-pokemon
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Shared/header/header.component';
 import { FooterComponent } from './Shared/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -26,7 +27,8 @@ import { FooterComponent } from './Shared/footer/footer.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ModalModule
+    ModalModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

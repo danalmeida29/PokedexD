@@ -9,7 +9,8 @@ import { PokemonsModel } from 'src/app/Models/ModelPokemon';
 })
 
 export class ListPokemonComponent implements OnInit {
-  PokemonsModel:any
+  PokemonsModel:any;
+  pokemon: any;
 
   pokemons: PokemonsModel[] = [
     { name: 'Bulbasaur', url:'Pk', id:'1'},
@@ -25,12 +26,14 @@ export class ListPokemonComponent implements OnInit {
   constructor(private router: Router,) { }
 
   ngOnInit(): void {
-    // this.detailsPokemon();
+    // console.log('test:');
   }
 
-  detailsPokemon(){
+  detailsPokemons(id:any){
+      localStorage.setItem('PokemonId', id);
     this.onNavigateTo('details')
   }
+  
 
   onNavigateTo(pageName: any) {
     this.router.navigate([`/${pageName}`]);

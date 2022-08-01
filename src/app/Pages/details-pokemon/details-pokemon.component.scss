@@ -16,6 +16,10 @@
     border: 1px solid yellow;
     width: 750px;
     box-shadow: 10px 5px 5px black;
+    background-image: url('https://wallpaperaccess.com/full/5539464.jpg');
+    background-repeat: no-repeat;
+    background-position: 0px -50px;
+    background-size: 750px 700px;
 }
 
 .col-1{
@@ -25,6 +29,9 @@
     grid-area: left;
     margin-left: -17px;
     width: 200px;
+    background:rgba(255, 255, 255, 0.356);
+    height: 483px;
+
 }
 
 .Imagem{
@@ -49,22 +56,30 @@
 /*---------------------------------------------------------------------------------------------------------------------------*/
 .name{
     margin-left: 45px;
+    background:rgba(255, 255, 255, 0.356);
     width: 500px;
-    height: 50px;
+    height: 30px;
+    font-size:xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 .type{
     margin-left: 45px;
     width: 500px;
     height: 30px;
+    background:rgba(255, 255, 255, 0.356);
     box-shadow: 0px 0px 0px black;
 }
 
 .medidas{
     margin-left: 45px;
+    margin-top: -5px;
     border-radius: 5px;
+    margin-bottom: 5px;
     width: 500px;
     height: 30px;
     box-shadow: 0px 0px 0px black;
+    background:rgba(255, 255, 255, 0.356);
 }
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
@@ -76,6 +91,7 @@
     height: 45px;
     color:black solid;
     box-shadow: 0px 0px 0px black;
+    background:rgba(255, 255, 255, 0.356);
 }
 
 .Status{
@@ -84,6 +100,7 @@
     height: 250px;
     margin-left: 45px;
     box-shadow: 0px 0px 0px black;
+    background:rgba(255, 255, 255, 0.356);
 }
 
 .A{
