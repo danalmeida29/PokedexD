@@ -8,8 +8,8 @@
         <div class="col-2">
 
             <a class="A">Tipo: </a>
-            <div class="type" *ngFor="let types of personagensPokemon.types" style="background-color: {{this.corPorTipo}}">
-                {{types.type.name}}
+            <div class="type" *ngFor="let types of personagensPokemon.types" style="color: {{this.typeColor[1]}}">
+                {{this.typeColor[0]}}
             </div><br/>
 
             <a class="A">medidas</a><br/>

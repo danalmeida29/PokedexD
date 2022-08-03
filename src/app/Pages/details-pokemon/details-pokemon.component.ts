@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { pokemonService } from 'src/app/Core/service-pokemon.service';
+import { TypeColorModel } from 'src/app/Models/ModelTypeColor';
 
 @Component({
   selector: 'app-details-pokemon',
@@ -12,6 +13,9 @@ export class DetailsPokemonComponent implements OnInit {
   erro: any;
   corPorTipo: any;
   personagensPokemon:any;
+
+  typeColor: TypeColorModel[] = [];
+  
   constructor(
     private servicePokemon: pokemonService,
   ) { }
@@ -32,7 +36,6 @@ export class DetailsPokemonComponent implements OnInit {
         const element = this.personagensPokemon.types[index];
 
 
-        
         switch (element.type.name) {
 
           case "bug":
@@ -112,7 +115,8 @@ export class DetailsPokemonComponent implements OnInit {
             break;
         }
 
-        alert(this.corPorTipo);
+        this.typeColor.push(element.type.name ,this.corPorTipo).toFixed;
+        console.log(this.typeColor);
       }
       
       

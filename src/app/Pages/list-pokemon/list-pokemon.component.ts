@@ -23,6 +23,10 @@ export class ListPokemonComponent implements OnInit {
     { name: 'Wartortle', url:'Pk', id:'8'},
     { name: 'Blastoise', url:'Pk', id:'9'},
   ];
+
+
+  
+
   constructor(private router: Router,) { }
 
   ngOnInit(): void {
