@@ -25,7 +25,6 @@
 .col-1{
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    background-image: url(https://i.imgur.com/wLHIPnR.png), url(https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 360px, 720px;
@@ -66,10 +65,11 @@
     font-weight: bold;
 }
 .type{
+    display: inline;
     margin-left: auto;
     margin-top: 5px;
     width: auto;
-    height: 30px;
+    height: auto;
     background:rgba(255, 255, 255, 0.356);
     box-shadow: 0px 0px 0px black;
 }
@@ -80,7 +80,7 @@
     border-radius: 5px;
     margin-bottom: 5px;
     width: auto;
-    height: 30px;
+    height: auto;
     box-shadow: 0px 0px 0px black;
     background:rgba(255, 255, 255, 0.356);
 }
@@ -92,7 +92,18 @@
     border-radius: 5px;
     margin-left: auto;
     margin-top: 5px;
-    height: 45px;
+    height: auto;
+    color:black solid;
+    box-shadow: 0px 0px 0px black;
+    background:rgba(255, 255, 255, 0.356);
+}
+
+.habilidades{
+    width: auto;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-top: 5px;
+    height: auto;
     color:black solid;
     box-shadow: 0px 0px 0px black;
     background:rgba(255, 255, 255, 0.356);
