@@ -15,9 +15,12 @@ export class DetailsPokemonComponent implements OnInit {
   corPorTipo: any;
 
   personagensPokemon:any;
-  typePokemon:any;
+  returnTypePokemon:any;
 
   typeColor: TypeColorModel[] = [];
+  types: any[] = []
+  pontoForte: any[] = []
+  pontoFraco: any[] = []
   typeDamage: any;
 
   damageColor: TypeColorModel[] = [];
@@ -28,41 +31,7 @@ export class DetailsPokemonComponent implements OnInit {
 
   ngOnInit(): void {
     this.idPokemon = localStorage.getItem('PokemonId');
-    this.getPokemon();
-    this.getType();
-  }
-
-
-  getType() {
-    this.servicePokemon.getType(this.idPokemon).subscribe(
-      (res:any)=>{
-        this.typePokemon = res;
-        
-        console.log(this.typePokemon);
-
-        this.relationDamage(this.typePokemon.damage_relations.double_damage_from, this.damageColor)
-
-        // for (let index = 0; index < this.typePokemon.damage_relations.double_damage_from.length; index++) {
-        //   const element = this.typePokemon.damage_relations.double_damage_from[index];
-    
-        //   this.validatingColorByType(element.name);
-          
-        //   this.damageColor.push({type: element.name ,color: this.corPorTipo}).toFixed;
-        //   console.log("O que há de novo scooby-Doo?", this.damageColor);
-        // }
-
-        // for (let index = 0; index < this.typePokemon.damage_relations.double_damage_to.length; index++) {
-        //   const element = this.typePokemon.damage_relations.double_damage_to[index];
-
-        //   this.validatingColorByType(element.name);
-          
-        //   this.damageToColor.push({type: element.name ,color: this.corPorTipo}).toFixed;
-        // }
-      },
-      (error: any) => {
-        this.Erro = error;
-      }
-    );
+    this.getPokemon();    
   }
 
   getPokemon(){
@@ -71,19 +40,53 @@ export class DetailsPokemonComponent implements OnInit {
     {
       this.personagensPokemon = res;
 
-      console.log(res);
-
       for (let index = 0; index < this.personagensPokemon.types.length; index++) {
         const element = this.personagensPokemon.types[index];
+
+        this.types.push({name: element.type.name,url: element.type.url})
 
         this.validatingColorByType(element.type.name);
 
         this.typeColor.push({type: element.type.name ,color: this.corPorTipo}).toFixed;
       }
+
+      this.getType();
     },
     (error: any) => {
       this.Erro = error;
+      alert(this.Erro);
     });
+  }
+
+  getType() {
+    for (let index = 0; index < this.types.length; index++) {
+      const element = this.types[index];
+      console.log(index)
+
+      this.servicePokemon.getType(element.url).subscribe(
+        (res:any)=>{
+          this.returnTypePokemon = res;
+          this.relationDamage(this.returnTypePokemon.damage_relations.double_damage_from, this.pontoFraco)
+          this.relationDamage(this.returnTypePokemon.damage_relations.double_damage_to, this.pontoForte)
+        },
+        (error: any) => {
+          this.Erro = error;
+          alert(this.Erro);
+        }
+      );      
+    }    
+  }
+
+  relationDamage(verificador: Array<any>, arrayAtribuido: Array<any>) {
+
+    for (let index = 0; index < verificador.length; index++) {
+
+      const element = verificador[index];
+
+      this.validatingColorByType(element.name);
+      
+      arrayAtribuido.push({type: element.name ,color: this.corPorTipo}).toFixed;
+    };
   }
 
   /**
@@ -171,25 +174,7 @@ export class DetailsPokemonComponent implements OnInit {
     }
   }
 
-  relationDamage(verificador: Array<any>, recebido: Array<any>) {
-    for (let index = 0; index < verificador.length; index++) {
-      const element = this.typePokemon.damage_relations.double_damage_from[index];
-
-      this.validatingColorByType(element.name);
-      
-      recebido.push({type: element.name ,color: this.corPorTipo}).toFixed;
-
-      console.log("O que há de novo scooby-Doo?", this.damageColor);
-    };
-
-    for (let index = 0; index < verificador.length; index++) {
-      const element = this.typePokemon.damage_relations.double_damage_to[index];
-
-      this.validatingColorByType(element.name);
-      
-      this.damageToColor.push({type: element.name ,color: this.corPorTipo}).toFixed;
-    }
-  }
+  
   
 
 }

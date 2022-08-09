@@ -17,8 +17,7 @@ export class pokemonService {
     return this.http.get(urlString);
   }
 
-  getType(id: any){
-    var urlString = `${BASE_URL}/type/${id}`;
-    return this.http.get(urlString);
+  getType(url: string){
+    return this.http.get(url);
   }
 }
