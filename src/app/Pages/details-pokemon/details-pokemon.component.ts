@@ -19,7 +19,9 @@ export class DetailsPokemonComponent implements OnInit {
 
   typeColor: TypeColorModel[] = [];
   typeDamage: any;
-  
+
+  damageColor: TypeColorModel[] = [];
+  damageToColor: TypeColorModel[] = [];
   constructor(
     private servicePokemon: pokemonService,
   ) { }
@@ -34,12 +36,28 @@ export class DetailsPokemonComponent implements OnInit {
   getType() {
     this.servicePokemon.getType(this.idPokemon).subscribe(
       (res:any)=>{
-        for (let index = 0; index < this.typePokemon.damage_relations.length; index++) {
-          const element = this.typePokemon.damage_relations[index];
+        this.typePokemon = res;
+        
+        console.log(this.typePokemon);
 
-          this.typeDamage.push(element.double_damage_from.name).toFixed;
-          console.log("o que a de novo scooby Doo?", this.typeDamage[index]);
-        }
+        this.relationDamage(this.typePokemon.damage_relations.double_damage_from, this.damageColor)
+
+        // for (let index = 0; index < this.typePokemon.damage_relations.double_damage_from.length; index++) {
+        //   const element = this.typePokemon.damage_relations.double_damage_from[index];
+    
+        //   this.validatingColorByType(element.name);
+          
+        //   this.damageColor.push({type: element.name ,color: this.corPorTipo}).toFixed;
+        //   console.log("O que há de novo scooby-Doo?", this.damageColor);
+        // }
+
+        // for (let index = 0; index < this.typePokemon.damage_relations.double_damage_to.length; index++) {
+        //   const element = this.typePokemon.damage_relations.double_damage_to[index];
+
+        //   this.validatingColorByType(element.name);
+          
+        //   this.damageToColor.push({type: element.name ,color: this.corPorTipo}).toFixed;
+        // }
       },
       (error: any) => {
         this.Erro = error;
@@ -51,8 +69,9 @@ export class DetailsPokemonComponent implements OnInit {
     this.servicePokemon.getPokemon(this.idPokemon).subscribe(
       (res:any)=>
     {
-      console.log(res);
       this.personagensPokemon = res;
+
+      console.log(res);
 
       for (let index = 0; index < this.personagensPokemon.types.length; index++) {
         const element = this.personagensPokemon.types[index];
@@ -60,7 +79,6 @@ export class DetailsPokemonComponent implements OnInit {
         this.validatingColorByType(element.type.name);
 
         this.typeColor.push({type: element.type.name ,color: this.corPorTipo}).toFixed;
-        console.log(this.typeColor[index].type + ' ' + this.typeColor[index].color);
       }
     },
     (error: any) => {
@@ -152,5 +170,26 @@ export class DetailsPokemonComponent implements OnInit {
       break;
     }
   }
+
+  relationDamage(verificador: Array<any>, recebido: Array<any>) {
+    for (let index = 0; index < verificador.length; index++) {
+      const element = this.typePokemon.damage_relations.double_damage_from[index];
+
+      this.validatingColorByType(element.name);
+      
+      recebido.push({type: element.name ,color: this.corPorTipo}).toFixed;
+
+      console.log("O que há de novo scooby-Doo?", this.damageColor);
+    };
+
+    for (let index = 0; index < verificador.length; index++) {
+      const element = this.typePokemon.damage_relations.double_damage_to[index];
+
+      this.validatingColorByType(element.name);
+      
+      this.damageToColor.push({type: element.name ,color: this.corPorTipo}).toFixed;
+    }
+  }
+  
 
 }

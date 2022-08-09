@@ -17,18 +17,24 @@
                 height {{personagensPokemon.height}}
             <br/>
                 weight {{personagensPokemon.weight}}Kg
-            </div>
+            </div><br/>
 
-            <a class="A">Weaknesses</a><br/>
-            <div class="fraquesas">
-                Weaknesses Weaknesses Weaknesses Weaknesses Weaknesses Weaknesses Weaknesses Weaknesses
-            </div>
+            <a class="A">Fraco contra</a><br/>
+            <b>Sofre o Dobro de Dano contra: </b>
+            <div class="fracoForte" *ngFor="let damage of damageColor" style="color:{{this.damage.color}}">
+            {{this.damage.type}}
+            </div><br/>
+
+            <a class="A">Forte contra</a><br/>
+            <b>Aplica o Dobro de Dano contra: </b>
+            <div class="fracoForte" *ngFor="let damageTo of damageToColor" style="color:{{this.damageTo.color}}">
+                {{this.damageTo.type}}
+            </div><br/>
 
             <a class="A">Habilidades</a><br/>
             <div class="habilidades" *ngFor="let habilidades of personagensPokemon.abilities">
                 {{habilidades.ability.name}}
             </div>
-
         </div>  
 
 
