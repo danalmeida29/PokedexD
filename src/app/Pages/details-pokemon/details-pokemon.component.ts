@@ -8,21 +8,22 @@ import { TypeColorModel } from 'src/app/Models/ModelTypeColor';
   styleUrls: ['./details-pokemon.component.scss']
 })
 export class DetailsPokemonComponent implements OnInit {
+
+  //#region variables
   namePokemon: any;
   idPokemon: any;
-
   Erro: any;
   corPorTipo: any;
-
   personagensPokemon:any;
-  returnTypePokemon:any;
-
+  typeDamage: any;
+  //#endregion
+  //#region Arrays
   typeColor: TypeColorModel[] = [];
   types: any[] = []
-  pontoForte: any[] = []
-  pontoFraco: any[] = []
-  typeDamage: any;
-
+  pontosFortes: any[] = []
+  pontosFracos: any[] = []
+  //#endregion
+  
   damageColor: TypeColorModel[] = [];
   damageToColor: TypeColorModel[] = [];
   constructor(
@@ -35,7 +36,7 @@ export class DetailsPokemonComponent implements OnInit {
   }
 
   /**
-   * Metodo que adquiri o tipo do pokemon e retorna o tipo e a cor no final 
+   * Responsável por obter os dados do pokemon selecionado
    */
   getPokemon(){
     this.servicePokemon.getPokemon(this.idPokemon).subscribe(
@@ -62,46 +63,76 @@ export class DetailsPokemonComponent implements OnInit {
   }
 
 /**
- * Metodo utilizado para retorna os pontos fracos e fortes do pokemon.
+ * Responsável por atribuir os pontos fracos e fortes do pokemon.
  */
   getType() {
     for (let index = 0; index < this.types.length; index++) {
       const element = this.types[index];
-      console.log(index)
 
       this.servicePokemon.getType(element.url).subscribe(
         (res:any)=>{
-          this.returnTypePokemon = res;
-          this.relationDamage(this.returnTypePokemon.damage_relations.double_damage_from, this.pontoFraco)
-          this.relationDamage(this.returnTypePokemon.damage_relations.double_damage_to, this.pontoForte)
+          this.relationDamage(res.damage_relations.double_damage_from, this.pontosFracos)
+          this.relationDamage(res.damage_relations.double_damage_to, this.pontosFortes)
+          this.comparingSimilarPoints();
         },
         (error: any) => {
           this.Erro = error;
           alert(this.Erro);
         }
-      );      
+      ); 
+      
     }    
   }
 
   /**
-   * Metodo que atribui a quantidade de pontos fracos e fortes e a cor de cada elemento adquirido.
-   * @param verificador [Array]: Parametro que define a quantidade total de elementos que o pokemon atribui como ponto fracos e fortes.
-   * @param arrayAtribuido [Array]: Parametro que define o nome e a cor de cada tipo de elemento
+   * 
+   */
+  comparingSimilarPoints(){
+
+    for (let indexFracos = 0; indexFracos < this.pontosFracos.length; indexFracos++){
+      const pontosFracos = this.pontosFracos[indexFracos];
+
+      for (let indexFortes = 0; indexFortes < this.pontosFortes.length; indexFortes++){
+        const pontosFortes = this.pontosFortes[indexFortes];
+
+        if(pontosFracos.name == pontosFortes.name){
+          this.pontosFracos.splice(indexFracos, 1);
+          this.pontosFortes.splice(indexFortes, 1);
+        }
+      }
+    }
+  }
+
+  /**
+   * Metodo que obtem e atribui a quantidade de pontos fracos e fortes e a cor de cada elemento.
+   * @param verificador [Array]: Quantidade total de elementos que o pokemon atribui como ponto fracos e fortes.
+   * @param arrayAtribuido [Array]: Nome e a cor de cada tipo de elemento
    */
   relationDamage(verificador: Array<any>, arrayAtribuido: Array<any>) {
 
     for (let index = 0; index < verificador.length; index++) {
 
+      let isRepetead = false;
       const element = verificador[index];
 
       this.validatingColorByType(element.name);
       
-      arrayAtribuido.push({name: element.name ,color: this.corPorTipo}).toFixed;
+      for (let index = 0; index < arrayAtribuido.length; index++) {
+        const newElement = arrayAtribuido[index];
+
+        if (element.name == newElement.name) {
+          isRepetead = true;
+        }  
+      }
+      if (!isRepetead) {
+        arrayAtribuido.push({name: element.name ,color: this.corPorTipo}).toFixed;        
+      }
+      
     };
   }
 
   /**
-   * metodo que atribui a cor de acordo com o tipo passado como parametro
+   * Metodo que atribui a cor de acordo com o tipo passado como parametro
    * @param tipo [String] : parametro que define os tipos dos pokemons.
    */
   validatingColorByType(tipo: string){
@@ -184,8 +215,6 @@ export class DetailsPokemonComponent implements OnInit {
       break;
     }
   }
-
-  
   
 
 }
