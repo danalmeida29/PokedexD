@@ -34,6 +34,9 @@ export class DetailsPokemonComponent implements OnInit {
     this.getPokemon();    
   }
 
+  /**
+   * Metodo que adquiri o tipo do pokemon e retorna o tipo e a cor no final 
+   */
   getPokemon(){
     this.servicePokemon.getPokemon(this.idPokemon).subscribe(
       (res:any)=>
@@ -58,6 +61,9 @@ export class DetailsPokemonComponent implements OnInit {
     });
   }
 
+/**
+ * Metodo utilizado para retorna os pontos fracos e fortes do pokemon.
+ */
   getType() {
     for (let index = 0; index < this.types.length; index++) {
       const element = this.types[index];
@@ -77,6 +83,11 @@ export class DetailsPokemonComponent implements OnInit {
     }    
   }
 
+  /**
+   * Metodo que atribui a quantidade de pontos fracos e fortes e a cor de cada elemento adquirido.
+   * @param verificador [Array]: Parametro que define a quantidade total de elementos que o pokemon atribui como ponto fracos e fortes.
+   * @param arrayAtribuido [Array]: Parametro que define o nome e a cor de cada tipo de elemento
+   */
   relationDamage(verificador: Array<any>, arrayAtribuido: Array<any>) {
 
     for (let index = 0; index < verificador.length; index++) {
@@ -85,7 +96,7 @@ export class DetailsPokemonComponent implements OnInit {
 
       this.validatingColorByType(element.name);
       
-      arrayAtribuido.push({type: element.name ,color: this.corPorTipo}).toFixed;
+      arrayAtribuido.push({name: element.name ,color: this.corPorTipo}).toFixed;
     };
   }
 
