@@ -1,6 +1,6 @@
 <div class="conteir">
     <div class="cardD">
-        <mat-card-title class="name">{{personagensPokemon.name}} n°{{idPokemon}}</mat-card-title>
+        <mat-card-title class="name"> {{personagensPokemon.name}} n°{{idPokemon}}</mat-card-title>
             <div class="col-1" style="background-image: url(https://codeboost.com.br/projetos/pokeapi/img/bg-{{personagensPokemon.types[0].type.name}}.svg)">
                 <img class="Imagem" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/{{idPokemon}}.svg" >
             </div>
@@ -8,30 +8,31 @@
         <div class="col-2">
 
             <a class="A">Tipo: </a>
-            <div class="type" *ngFor="let types of typeColor" style="color: {{this.types.color}}">
+            <div class="type" *ngFor="let types of typeColor" style="background: {{this.types.color}}">
                 {{this.types.type}}
             </div><br/>
 
-            <a class="A">medidas</a><br/>
-            <div class="medidas">
-                height {{personagensPokemon.height}}
-            <br/>
-                weight {{personagensPokemon.weight}}Kg
+            <a class="A">Habilidades: </a>
+            <div class="habilidades" *ngFor="let habilidades of personagensPokemon.abilities">
+                {{habilidades.ability.name}}
             </div><br/>
 
-            <a class="A">Fraco contra</a><br/>
-            <div class="fracoForte" *ngFor="let type of this.pontosFracos" style="color:{{this.type.color}}">
+            <a class="A">medidas: </a>
+            <div class="medidas">
+                height: {{personagensPokemon.height}}
+            </div>
+            <div  class="medidas">
+                weight: {{personagensPokemon.weight}}Kg
+            </div><br/>
+
+            <a class="A">Fraco contra: </a>
+            <div class="fracoForte" *ngFor="let type of this.pontosFracos" style="background:{{this.type.color}}">
             {{type.name}}
             </div><br/>
 
-            <a class="A">Forte contra</a><br/>
-            <div class="fracoForte" *ngFor="let type of this.pontosFortes" style="color:{{this.type.color}}">
+            <a class="A">Forte contra: </a>
+            <div class="fracoForte" *ngFor="let type of this.pontosFortes" style="background:{{this.type.color}}">
                 {{type.name}}
-            </div><br/>
-
-            <a class="A">Habilidades</a><br/>
-            <div class="habilidades" *ngFor="let habilidades of personagensPokemon.abilities">
-                {{habilidades.ability.name}}
             </div>
         </div>  
 

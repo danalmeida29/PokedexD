@@ -139,7 +139,7 @@ export class DetailsPokemonComponent implements OnInit {
     switch (tipo) {
 
       case "bug":
-        this.corPorTipo = "#9BBA48;" 
+        this.corPorTipo = "rgb(156 213 3);" 
       break; 
 
       case "drak":
@@ -150,32 +150,32 @@ export class DetailsPokemonComponent implements OnInit {
         this.corPorTipo = "#2C6AC1;"
       break; 
 
-      case "eletric":
-        this.corPorTipo = "#D4BC34;"
+      case "electric":
+        this.corPorTipo = "yellow;"
       break; 
 
       case "fighting":
-        this.corPorTipo = "#C44D61;"
+        this.corPorTipo = "rgb(229 55 84);"
       break; 
-
+      
       case "flying":
-        this.corPorTipo = "#758CBD;"
+        this.corPorTipo = "rgb(72 118 217);"
       break;
 
       case "fire":
-        this.corPorTipo = "#E96303;"
+        this.corPorTipo = "rgb(255 110 7);"
       break; 
 
       case "fairy":
-        this.corPorTipo = "#E296E1;"
+        this.corPorTipo = "rgb(255 138 253);"
       break; 
 
       case "grass":
-        this.corPorTipo = "#73B861;"
+        this.corPorTipo = "rgb(47 199 8);"
       break;
 
       case "ground":
-        this.corPorTipo = "#CE8056;"
+        this.corPorTipo = "rgb(191 76 14);"
       break;
 
       case "ghost":
@@ -183,7 +183,7 @@ export class DetailsPokemonComponent implements OnInit {
       break;
 
       case "ice":
-        this.corPorTipo = "#71BAAC;"
+        this.corPorTipo = "rgb(154 243 226);"
       break;
 
       case "normal":
@@ -191,23 +191,23 @@ export class DetailsPokemonComponent implements OnInit {
       break;
 
       case "poison":
-        this.corPorTipo = "#AC6ACA;"
+        this.corPorTipo = "rgb(153 20 213);"
       break;  
 
       case "psychic":
-        this.corPorTipo = "#EB8B85;"
+        this.corPorTipo = "rgb(255 102 92);"
       break; 
 
       case "rock":
-        this.corPorTipo = "#84BEB3;"
+        this.corPorTipo = "rgb(57 185 161);"
       break;  
 
-      case "rock":
-        this.corPorTipo = "#6594A1;"
+      case "steel":
+        this.corPorTipo = "rgb(61 131 151);"
       break; 
 
       case "water":
-        this.corPorTipo = "#4F77BE;"
+        this.corPorTipo = "rgb(13 100 255);"
       break; 
 
       default:

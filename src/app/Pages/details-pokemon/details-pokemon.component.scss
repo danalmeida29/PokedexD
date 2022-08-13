@@ -11,9 +11,13 @@
     margin-right: auto;
     justify-content: center;
     padding: 5px;
-    background: white;
+    background-image: url(https://guikao.files.wordpress.com/2012/01/pokemon_wallpaper01_1680.jpg);
     background-repeat: no-repeat;
-    border: solid coral;
+    background-position: center;
+    border-left: solid 3px white;
+    border-right: solid 3px white;
+    box-shadow: 1px 9px 3px 8px rgb(0 0 0 / 74%);
+    
 }
 
 .cardD{
@@ -21,22 +25,26 @@
     height: auto;
     max-width: 900px;
     min-width: 300px;
-    margin-top: -7px;
+    margin-top: 1px;
     border: cornflowerblue solid 2px;
+    background: url(https://i.pinimg.com/736x/1b/b4/f2/1bb4f25c40209294bbb6b06a63414f75.jpg);
+    background-size: 1000px;
+    background-repeat: no-repeat;
+    background-position-x: -100px;
+    box-shadow: 7px 2px 3px 2px rgb(0 0 0 / 74%);
 }
 
 .col-1{
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    display: block;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 360px, 720px;
-    border: 3px solid red;
-    margin-top: 67px;
-    margin-left: 5px;
+    margin-top: -60px;
+    margin-left: 1px;
     grid-area: left;
     width: 264px;
-    height: 715px;
+    height: 885px;
+    box-shadow: 7px 0px 0px -1px rgb(0 0 0 / 74%);
 }
 
 .Imagem{
@@ -47,9 +55,11 @@
 
 .col-2{
     display: block;
-    border: 3px solid rgb(166, 255, 251);
+    background: rgba(73, 73, 73, 0.233);
+    box-shadow: 4px 0px 3px 2px #000000bd;
+    // border: 3px solid rgb(166, 255, 251);
     border-radius: 5px;
-    margin-top: -724px;
+    margin-top: -710px;
     margin-left: 320px;
     margin-right: 5px;
     height:auto;
@@ -68,38 +78,51 @@
     margin-left: 320px;
     margin-top: 5px;
     margin-right: 5px;
-    box-shadow: 0px 0px 0px black;
+    box-shadow: 4px 6px 3px 2px #000000bd;
     background:rgba(73, 73, 73, 0.39);
 }
 /*---------------------------------------------------------------------------------------------------------------------------*/
 .name{
     display: flex;
-    margin-left: 300px;
-    margin-top: 82px;
     width: auto;
+    margin-bottom: -20px;
+    margin-top: 20px;
+    margin-left: 250px;
+    padding: 10px;
+    height: auto;
+    justify-content: center;
     font-size: xx-large;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    background:black;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 .type{
     display: inline;
-    margin-left: auto;
+    margin-left: 5px;
     margin-top: 5px;
+    border-radius: 5px;
     width: auto;
     height: auto;
-    background:rgba(255, 255, 255, 0.356);
-    box-shadow: 0px 0px 0px black;
+    box-shadow: 2px 2px 3px black;
+    font-size: large;
+    color: black;
 }
 
 .medidas{
-    margin-left: auto;
+    display: inline-block;
+    margin-left: 5px;
     margin-top: -5px;
-    border-radius: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
+    border-radius: 4px;
     width: auto;
     height: auto;
-    box-shadow: 0px 0px 0px black;
-    background:rgba(255, 255, 255, 0.356);
+    box-shadow: 2px 2px 3px black;
+    background-color: rgba(223, 1, 139, 92%);
+    font-size: large;
+    color: black;
 }
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
@@ -108,30 +131,34 @@
     display: inline;
     width: auto;
     border-radius: 5px;
-    margin-left: auto;
+    margin-left: 5px;
     margin-top: 5px;
     height: auto;
-    color:black solid;
-    box-shadow: 0px 0px 0px black;
-    background:rgba(255, 255, 255, 0.356);
+    box-shadow: 2px 2px 3px black;
+    font-size: large;
+    color: black;
 }
+
 
 .habilidades{
     display: inline;
     width: auto;
-    border-radius: 5px;
-    margin-left: auto;
+    border-radius: 4px;
+    margin-left: 5px;
     height: auto;
-    box-shadow: 0px 0px 0px black;
-    background:rgba(255, 255, 255, 0.356);
+    box-shadow: 2px 2px 3px black;
+    background-color: rgba(223, 1, 139, 92%);
+    font-size: large;
+    color: black;
 }
 
 .A{
+    display: inline-block;
     margin-left: auto;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     font-size: larger;
-    font-weight:bold;
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    color: black;
+    color: rgb(0 0 0 / 70%);
 }
