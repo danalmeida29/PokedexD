@@ -1,9 +1,12 @@
 .container {
-    width: 100%;
-    display: block;
-    background-color: #2f2f2f;
-    background-size: 100% 100%;
-    background-attachment: inherit;
-    background-repeat: no-repeat;
+  width: 100%;
+  min-height: -webkit-fill-available;
+  max-height: 50%;
+  min-width: 50%;
+  display: block;
+  // background-image: url(https://cdn.wallpapersafari.com/75/83/S1GOo7.png);
+  background-image: url(../img/pokemonBG.jpg);
+    background-size: 100%;
+      background-repeat: no-repeat;
   }
   

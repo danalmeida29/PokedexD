@@ -11,40 +11,34 @@
     margin-right: auto;
     justify-content: center;
     padding: 5px;
-    background-image: url(https://guikao.files.wordpress.com/2012/01/pokemon_wallpaper01_1680.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    border-left: solid 3px white;
-    border-right: solid 3px white;
-    box-shadow: 1px 9px 3px 8px rgb(0 0 0 / 74%);
-    
 }
 
 .cardD{
     width: auto;
     height: auto;
-    max-width: 900px;
-    min-width: 300px;
-    margin-top: 1px;
-    border: cornflowerblue solid 2px;
-    background: url(https://i.pinimg.com/736x/1b/b4/f2/1bb4f25c40209294bbb6b06a63414f75.jpg);
-    background-size: 1000px;
+    margin-bottom: 68px;
+    max-width: 908px;
+    min-width: 305px;
+    margin-top: -1px;
+    background: #e8f7ff url(https://cdn.dribbble.com/users/956603/screenshots/6348374/pokeball.png?compress=1&resize=400x300&vertical=top);
+    background-size: 598px;
     background-repeat: no-repeat;
-    background-position-x: -100px;
-    box-shadow: 7px 2px 3px 2px rgb(0 0 0 / 74%);
+    background-position-x: 170px;
+    background-position-y: 452px;
 }
+
 
 .col-1{
     display: block;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 360px, 720px;
-    margin-top: -60px;
+    margin-top: -73px;
     margin-left: 1px;
     grid-area: left;
-    width: 264px;
-    height: 885px;
-    box-shadow: 7px 0px 0px -1px rgb(0 0 0 / 74%);
+    width: 253px;
+    height: 816px;
+    box-shadow: 7px 0px 0px -1px rgb(0 0 0 / 7%);
 }
 
 .Imagem{
@@ -53,33 +47,33 @@
     margin-left: 48px;
 }
 
-.col-2{
-    display: block;
-    background: rgba(73, 73, 73, 0.233);
-    box-shadow: 4px 0px 3px 2px #000000bd;
-    // border: 3px solid rgb(166, 255, 251);
-    border-radius: 5px;
-    margin-top: -710px;
-    margin-left: 320px;
-    margin-right: 5px;
-    height:auto;
-    width: auto;
-    max-width: 500px;
-    min-width: 140px;
-}
+// .col-2{
+//     display: block;
+//     background: rgb(255 255 255/ 39%);
+//     box-shadow: 4px 0px 3px 2px rgb(0 0 0 / 3%);
+//     border-radius: 5px;
+//     margin-top: -669px;
+//     margin-left: 316px;
+//     margin-right: 5px;
+//     height: auto;
+//     width: auto;
+//     min-height: 160px;
+//     max-width: 500px;
+//     min-width: 395px;
+// }
 
 .Status{
     width: auto;
     height: auto;
     max-width: 500px;
-    min-width: 140px;
+    min-width: 395px;
     border-radius: 5px;
-    min-height: 250px;
-    margin-left: 320px;
+    min-height: 296px;
+    margin-left: 315px;
     margin-top: 5px;
     margin-right: 5px;
-    box-shadow: 4px 6px 3px 2px #000000bd;
-    background:rgba(73, 73, 73, 0.39);
+    box-shadow: 4px 6px 3px 2px rgb(0 0 0 / 3%);
+    background: rgb(255 255 255 / 39%);
 }
 /*---------------------------------------------------------------------------------------------------------------------------*/
 .name{
@@ -100,15 +94,17 @@
     color: transparent;
 }
 .type{
-    display: inline;
-    margin-left: 5px;
-    margin-top: 5px;
+    display: flex;
+    margin-left: 371px;
+    margin-top: 15px;
     border-radius: 5px;
     width: auto;
+    max-width: 75px;
     height: auto;
     box-shadow: 2px 2px 3px black;
     font-size: large;
     color: black;
+    justify-content: center;
 }
 
 .medidas{
@@ -118,10 +114,12 @@
     margin-bottom: 3px;
     border-radius: 4px;
     width: auto;
+    min-width: 150px;
     height: auto;
     box-shadow: 2px 2px 3px black;
-    background-color: rgba(223, 1, 139, 92%);
+    background-color: rgba(223, 1, 139, 0.92);
     font-size: large;
+    text-align: center;
     color: black;
 }
 
