@@ -1,23 +1,23 @@
-.footer {
+.footer, push{
+  height: auto;
+  // bottom: 0;
+  // justify-content: center;
+}
 
-    bottom: 0;
-    justify-content: center;
-  }
+.footerText{
+  position: absolute;
+  margin-top: 10px;
+}
 
-  .footerText{
-    position: absolute;
-    margin-top: 10px;
-  }
+.posição{
+  margin-left: auto;
+  margin-top: 10px;
+}
 
-  .posição{
-    margin-left: auto;
-    margin-top: 10px;
-  }
-
-  .link1 {
-    margin-top: 5px;
-  }
-  .link2 {
-    margin-top: 5px;
-    margin-left: 10px;
-  }
+.link1 {
+  margin-top: 5px;
+}
+.link2 {
+  margin-top: 5px;
+  margin-left: 10px;
+}

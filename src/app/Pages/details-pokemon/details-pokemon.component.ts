@@ -215,6 +215,10 @@ export class DetailsPokemonComponent implements OnInit {
       break;
     }
   }
+
+  status(){
+    
+  }
   
 
 }
