@@ -2,6 +2,7 @@
     <mat-card class="card" *ngFor="let pokemon of pokemons" (click)="detailsPokemons(pokemon.id)">
         <mat-card-title-group>
             <div>
+                <img class="minPokeball" src="https://codeboost.com.br/projetos/pokeapi/img/icon-poke-red.svg">
                 <img class="card_img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png">
             </div><br/>
             <div class="card_info">

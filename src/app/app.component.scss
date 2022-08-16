@@ -1,12 +1,7 @@
 .container {
   width: 100%;
-  min-height: -webkit-fill-available;
-  max-height: 50%;
-  min-width: 50%;
   display: block;
-  // background-image: url(https://cdn.wallpapersafari.com/75/83/S1GOo7.png);
-  background-image: url(../img/pokemonBG.jpg);
-    background-size: 100%;
-      background-repeat: no-repeat;
-  }
+  // background-image: url(https://cdn.wallpapersafari.com/75/83/S1GOo7.png) url(https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png);
+  background: white url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
+}
   
