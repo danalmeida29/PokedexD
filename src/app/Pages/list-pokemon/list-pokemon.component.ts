@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PokemonsModel } from 'src/app/Models/ModelPokemon';
+import { pokemonService } from 'src/app/Core/service-pokemon.service'
 
 @Component({
   selector: 'app-list-pokemon',
@@ -9,28 +10,42 @@ import { PokemonsModel } from 'src/app/Models/ModelPokemon';
 })
 
 export class ListPokemonComponent implements OnInit {
-  PokemonsModel:any;
-  pokemon: any;
 
-  pokemons: PokemonsModel[] = [
-    { name: 'Bulbasaur', url:'Pk', id:'1'},
-    { name: 'Ivysaur', url:'Pk', id:'2'},
-    { name: 'Venusaur', url:'Pk', id:'3'},
-    { name: 'Charmander', url:'Pk', id:'4'},
-    { name: 'Charmeleon', url:'Pk', id:'5'},
-    { name: 'Charizard', url:'Pk', id:'6'},
-    { name: 'Squirtle', url:'Pk', id:'7'},
-    { name: 'Wartortle', url:'Pk', id:'8'},
-    { name: 'Blastoise', url:'Pk', id:'9'},
-  ];
+  erro: any;
+  pokemons: any;
 
+  pokemonList: PokemonsModel[] = [];
 
-  
-
-  constructor(private router: Router,) { }
+  constructor(
+    private router: Router,
+    private pokemonService: pokemonService
+  ) { }
 
   ngOnInit(): void {
     // console.log('test:');
+    this.listPokemon();
+  }
+
+  listPokemon(){
+    this.pokemons = this.pokemonService.carregarPokemons().subscribe(
+      (res: any) => {
+        this.pokemons = res;
+        console.log("Console do res:", this.pokemons);
+        for(let i = 0; i <this.pokemons.results.length; i++){
+          const pokemon = this.pokemons.results[i];
+          this.pokemonList.push({name: pokemon.name, url: pokemon.url, id:i+1 }).toFixed;
+        }
+        //For percorrendo cada um dos pokemon em pokemons.results
+        // dentro do for dar um push em pokemonsList, incluindo no parametro Id o index + 1
+        //--  no ngFor do HTML deve percorrer o pokemonList que tem, nome Url e Id para poder pegar a imagem passando o Id
+
+        
+        console.log('Console do listPokemon: ', this.pokemonList);
+      },
+      (error: any) => {
+        this.erro = error;
+      }
+    );
   }
 
   detailsPokemons(id:any){
