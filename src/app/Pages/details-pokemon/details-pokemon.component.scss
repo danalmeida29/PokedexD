@@ -70,6 +70,7 @@
 .Status{
     display: flex;
     width: auto;
+    padding-right: 5px;
     border-radius: 5px;
     height: auto;
     margin-left: 5px;
@@ -89,11 +90,11 @@
     font-weight: bold;
 }
 .status_valor{
-    width: 85%;
     height: 20px;
     float: right;
     color: #e8f7ff;
     font-weight: bold;
+    overflow: hidden;
 }
 .name_centralizado{
     position: relative;
@@ -109,7 +110,6 @@
     top:50%;
     margin-left: 5px;
     transform: translateY(-50%);
-    font-size: 12px bold;
     cursor: pointer;
 }
 
