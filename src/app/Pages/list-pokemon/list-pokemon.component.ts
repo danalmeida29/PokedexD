@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, ElementRef, Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { PokemonsModel } from 'src/app/Models/ModelPokemon';
 import { pokemonService } from 'src/app/Core/service-pokemon.service'
@@ -11,11 +11,12 @@ import { pokemonService } from 'src/app/Core/service-pokemon.service'
 
 export class ListPokemonComponent implements OnInit {
 
+  @ViewChild('filterInput') filterInput!:  ElementRef
   erro: any;
   pokemons: any;
 
   pokemonList: PokemonsModel[] = [];
-
+  filteredList: any[] = [];
   constructor(
     private router: Router,
     private pokemonService: pokemonService
@@ -46,6 +47,15 @@ export class ListPokemonComponent implements OnInit {
         this.erro = error;
       }
     );
+  }
+
+  filterPokemon(){
+    let filterValue = this.filterInput.nativeElement.value
+    this.filteredList = this.pokemonList.filter((pokemons: any) =>
+    pokemons.name.trim().toLowerCase().includes(filterValue)
+    );
+
+    console.log(this.filterInput.nativeElement.value);
   }
 
   detailsPokemons(id:any){

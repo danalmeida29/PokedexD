@@ -43,7 +43,7 @@ export class DetailsPokemonComponent implements OnInit {
       (res:any)=>
     {
       this.personagensPokemon = res;
-
+        console.log(this.personagensPokemon)
       for (let index = 0; index < this.personagensPokemon.types.length; index++) {
         const element = this.personagensPokemon.types[index];
 
@@ -143,7 +143,7 @@ export class DetailsPokemonComponent implements OnInit {
       break; 
 
       case "drak":
-        this.corPorTipo = "#595761;;"
+        this.corPorTipo = "#595761;"
       break; 
 
       case "dragon":
@@ -216,9 +216,20 @@ export class DetailsPokemonComponent implements OnInit {
     }
   }
 
-  status(){
-    
+  pegarImagemPokemon(){
+    const numeroFormatado = this.leadingZero(this.idPokemon);
+    console.log("nº",numeroFormatado)
+    return `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${numeroFormatado}.png`
   }
+
+  leadingZero(str: string | number, size = 3): string {
+    let s = String(str);
   
+    while (s.length < (size || 2)) {
+      s = '0' + s;
+    }
+  
+    return s;
+  }
 
 }
