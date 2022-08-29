@@ -1,42 +1,48 @@
 <div class="container">
     <div class="cardD">
+        <img class="icon" src="https://codeboost.com.br/projetos/pokeapi/img/{{personagensPokemon.types[0].type.name}}.svg">
         <mat-card-title class="name"> 
             {{personagensPokemon.name}} #{{idPokemon}}
         </mat-card-title>
+
+        <div class="col-1">
+            <!-- <img class="Bg"style="background-image: url(https://codeboost.com.br/projetos/pokeapi/img/bg-{{personagensPokemon.types[0].type.name}}.svg)"> -->
+            <img class="Imagem" src="{{pegarImagemPokemon()}}" >
+        </div>
+
         <div class="posição">
+            <a class="A">Pokémon Type</a><br/>
             <div class="type" *ngFor="let types of typeColor" style="background: {{this.types.color}}">
                 {{this.types.type}}
             </div>
-        </div><br/>
-        <div class="posição">
+        </div>
+        <div class="posição1">
             <a class="A">Height</a>
-            <a class="A">weight</a>
-            <br/>
             <div class="medidas">{{personagensPokemon.height}}m</div>
-            <div class="medidas"> {{personagensPokemon.weight}}Kg</div><br/>
+            <a class="A">weight</a>
+            <div class="medidas"> {{personagensPokemon.weight}}Kg</div>
             <a class="A">Abilities:</a>
             <div class="habilidades" *ngFor="let habilidades of personagensPokemon.abilities">
                 {{habilidades.ability.name}}
             </div>
         </div>
-        <div class="posição2">
-            <a class="A">Fraco contra</a>
-            <div class="fracoForte" *ngFor="let type of this.pontosFracos" style="background:{{this.type.color}}">
-            {{type.name}}
-            </div><br/>
-            <a class="A">Forte contra</a>
-            <div class="fracoForte" *ngFor="let type of this.pontosFortes" style="background:{{this.type.color}}">
+
+
+        <div class="direção">
+            <div class="posição2">
+                <a class="A">weak against</a>
+                <div class="fracoForte" *ngFor="let type of this.pontosFracos" style="background:{{this.type.color}}">
                 {{type.name}}
+                </div>
+            </div>   
+            <div class="posição2">
+                <a class="A">strong</a>
+                <div class="fracoForte" *ngFor="let type of this.pontosFortes" style="background:{{this.type.color}}">
+                    {{type.name}}
+                </div>
             </div>
         </div>
             
-            <div class="col-1">
-                <img class="Bg"style="background-image: url(https://codeboost.com.br/projetos/pokeapi/img/bg-{{personagensPokemon.types[0].type.name}}.svg)">
-                <!-- <img class="icon" src="https://codeboost.com.br/projetos/pokeapi/img/{{personagensPokemon.types[0].type.name}}.svg"> -->
-                <img class="Imagem" src="{{pegarImagemPokemon()}}" >
-            </div>
-           
-
         <div class="Status">
 
             <div class="status_name">

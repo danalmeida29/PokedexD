@@ -12,17 +12,19 @@
     padding: 5px;
 }
 .cardD{
+
+    //url(https://cdn.dribbble.com/users/956603/screenshots/6348374/pokeball.png?compress=1&resize=400x300&vertical=top);
     width: auto;
     height: auto;
     max-height: 550px;
-    min-height: 760px;
+    min-height: 820px;
     margin-bottom: 68px;
     max-width: 908px;
-    min-width: 630px;
+    min-width: 576px;
     margin-top: 20px;
     border-top: solid 5px #ffca00;
     border-bottom: solid 5px #ffca00;
-    background: #ffffff; //url(https://cdn.dribbble.com/users/956603/screenshots/6348374/pokeball.png?compress=1&resize=400x300&vertical=top);
+    background: #ffffff url(../../../img/pokeballAzul.png);
     background-size: 598px;
     background-repeat: no-repeat;
     background-position-x: 300px;
@@ -31,21 +33,45 @@
     border-radius: 20px;
 }
 
+.direção{    
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 100px;
+    margin-top: 20px;
+}
+
 .posição{
     margin-left: 325px;
+    height: 75px;
+    margin-top: -295px;
+}
+
+.posição1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 325px;
+    height: 200px;
 }
 
 .posição2{
     width: 120px;
     display: flex;
-    margin-left: 325px;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 10px;
 }
 
 
 .col-1{
-    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 316px;
+    height: 284px;
+    margin-top: -311px;
+    padding: 15px;
+    margin-left: 5px;
 }
 
 .bg{
@@ -54,32 +80,30 @@
 }
 
 .Imagem{
-    margin-top: -425px;
-    margin-bottom: 50px;
     margin-left: 6px;
     width: 280px;
 }
 
 .icon{
-    width: 20px;
-    margin-left: 318px;
-    margin-top: -257px;
-    position: absolute;
+    width: 33px;
+    margin-left: 19px;
+    margin-top: 20px;
+    margin-bottom: -33px;
 }
 
 .Status{
     display: flex;
-    width: auto;
-    padding-right: 5px;
-    border-radius: 5px;
-    height: auto;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 10px;
-    box-shadow: 4px 6px 3px 2px rgb(0 0 0 / 3%);
-    background: rgba(17, 17, 17, 0.596);
     flex-direction: column;
     flex-wrap: nowrap;
+    width: auto;
+    height: auto;
+    padding-right: 5px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 82px;
+    box-shadow: 4px 6px 3px 2px rgb(0 0 0 / 3%);
+    background: rgba(17, 17, 17, 0.596);
 }
 //----------------------------------------
 .status_name{
@@ -117,9 +141,7 @@
 .name{
     display: flex;
     width: auto;
-    margin-bottom: -20px;
-    margin-top: 20px;
-    margin-left: 236px;
+    margin-bottom: 310px;
     margin-right: 25px;
     padding: 10px;
     height: auto;
@@ -131,7 +153,8 @@
 .type{
     display: inline-flex;
     margin-right: 5px;
-    margin-top: 15px;
+    margin-left: 5px;
+    margin-top: 2px;
     border-radius: 5px;
     width: auto;
     min-width: 90px;
@@ -147,7 +170,7 @@
     display: inline-block;
     margin-left: 5px;
     margin-right: 5px;
-    margin-top: -5px;
+    margin-top: 3px; 
     margin-bottom: 3px;
     border-radius: 4px;
     width: auto;
@@ -171,7 +194,7 @@
     justify-content: center;
     border-radius: 5px;
     margin-left: 3px;
-    margin-top: 5px;
+    margin-top: 3px;
     height: auto;
     font-size: large;
     color: black;
@@ -183,8 +206,10 @@
     width: auto;
     border-radius: 4px;
     margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 3px; 
     height: auto;
-    background-color: rgba(216, 10, 137, 0.87);
+    background-color: rgb(64 143 253 / 48%);
     font-size: 17px;
     text-align: center;
     font-weight: bold;
@@ -193,7 +218,7 @@
 
 .A{
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 5px;
     margin-top: 10px;
     margin-bottom: 3px;
     font-size: larger;

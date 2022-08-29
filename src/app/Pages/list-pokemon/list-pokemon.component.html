@@ -1,5 +1,23 @@
+<div class="linha">   
+</div>
+<div class="todoFilter">
+    <div class="posionFilter">
+        <mat-form-field class="filter" >
+            <mat-icon class="search">
+                search
+            </mat-icon>
+            <input matInput (input)="filterPokemon($event)" type="text" placeholder="Search Pokémon...">
+        </mat-form-field>
+    </div>
+    <div class="pokeball">
+        <div class="imgBall"></div>
+    </div>
+    <div class="textFilter">
+        Select your Pokémon
+    </div>
+</div>
 <div class="posição">
-    <mat-card class="card" *ngFor="let pokemon of pokemonList" (click)="detailsPokemons(pokemon.id)">
+    <mat-card class="card" *ngFor="let pokemon of filteredList" (click)="detailsPokemons(pokemon.id)">
         <mat-card-title-group>
             <div>
                 <img class="minPokeball" src="https://codeboost.com.br/projetos/pokeapi/img/icon-poke-red.svg">
