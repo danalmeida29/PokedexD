@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
-const BASE_URL = 'https://pokeapi.co/api/v2';
+const BASE_URL = environment.BASE_API
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,9 @@ const BASE_URL = 'https://pokeapi.co/api/v2';
 export class pokemonService {
 
   constructor(private http: HttpClient) { }
-  pokemons: any;
-  erro: any;
+  
 
-  getPokemon(id: any){
+  getPokemon(id: Number){
     var urlString = `${BASE_URL}/pokemon/${id}`;
     return this.http.get(urlString);
   }

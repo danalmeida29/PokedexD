@@ -11,7 +11,7 @@ import { pokemonService } from 'src/app/Core/service-pokemon.service'
 
 export class ListPokemonComponent implements OnInit {
 
-  erro: any;
+  erro!: Error;
   pokemons: any;
 
   pokemonList: PokemonsModel[] = [];
@@ -39,7 +39,7 @@ export class ListPokemonComponent implements OnInit {
 
         this.filteredList = this.pokemonList;
       },
-      (error: any) => {
+      (error: Error) => {
         this.erro = error;
       }
     );
@@ -58,7 +58,7 @@ export class ListPokemonComponent implements OnInit {
   }
   
 
-  onNavigateTo(pageName: any) {
+  onNavigateTo(pageName: String) {
     this.router.navigate([`/${pageName}`]);
   }
 }

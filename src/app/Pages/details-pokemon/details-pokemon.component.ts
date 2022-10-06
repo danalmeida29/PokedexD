@@ -12,11 +12,11 @@ export class DetailsPokemonComponent implements OnInit {
   //#region variables
   namePokemon: any;
   idPokemon: any;
-  Erro: any;
-  corPorTipo: any;
+  Erro!: Error;
+  corPorTipo!: string;
   personagensPokemon:any;
-  typeDamage: any;
   //#endregion
+
   //#region Arrays
   typeColor: TypeColorModel[] = [];
   types: any[] = []
@@ -24,8 +24,6 @@ export class DetailsPokemonComponent implements OnInit {
   pontosFracos: any[] = []
   //#endregion
   
-  damageColor: TypeColorModel[] = [];
-  damageToColor: TypeColorModel[] = [];
   constructor(
     private servicePokemon: pokemonService,
   ) { }
@@ -56,7 +54,7 @@ export class DetailsPokemonComponent implements OnInit {
 
       this.getType();
     },
-    (error: any) => {
+    (error: Error) => {
       this.Erro = error;
       alert(this.Erro);
     });
@@ -75,7 +73,7 @@ export class DetailsPokemonComponent implements OnInit {
           this.relationDamage(res.damage_relations.double_damage_to, this.pontosFortes)
           this.comparingSimilarPoints();
         },
-        (error: any) => {
+        (error: Error) => {
           this.Erro = error;
           alert(this.Erro);
         }
