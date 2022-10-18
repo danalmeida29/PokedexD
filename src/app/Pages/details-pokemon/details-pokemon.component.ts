@@ -41,7 +41,6 @@ export class DetailsPokemonComponent implements OnInit {
       (res:any)=>
     {
       this.personagensPokemon = res;
-        console.log(this.personagensPokemon)
       for (let index = 0; index < this.personagensPokemon.types.length; index++) {
         const element = this.personagensPokemon.types[index];
 
@@ -216,7 +215,6 @@ export class DetailsPokemonComponent implements OnInit {
 
   pegarImagemPokemon(){
     const numeroFormatado = this.leadingZero(this.idPokemon);
-    console.log("nº",numeroFormatado)
     return `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${numeroFormatado}.png`
   }
 
